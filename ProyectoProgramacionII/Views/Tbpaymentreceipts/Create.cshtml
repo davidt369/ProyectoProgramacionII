@@ -1,0 +1,56 @@
+﻿@model ProyectoProgramacionII.Models.Tbpaymentreceipt
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Tbpaymentreceipt</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FkPaymentmethod" class="control-label"></label>
+                <select asp-for="FkPaymentmethod" class ="form-control" asp-items="ViewBag.FkPaymentmethod"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FkSale" class="control-label"></label>
+                <select asp-for="FkSale" class ="form-control" asp-items="ViewBag.FkSale"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiptImage" class="control-label"></label>
+                <input asp-for="ReceiptImage" class="form-control" />
+                <span asp-validation-for="ReceiptImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiptDate" class="control-label"></label>
+                <input asp-for="ReceiptDate" class="form-control" />
+                <span asp-validation-for="ReceiptDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiptTime" class="control-label"></label>
+                <input asp-for="ReceiptTime" class="form-control" />
+                <span asp-validation-for="ReceiptTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatedAt" class="control-label"></label>
+                <input asp-for="UpdatedAt" class="form-control" />
+                <span asp-validation-for="UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
